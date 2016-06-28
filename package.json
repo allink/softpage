@@ -1,0 +1,22 @@
+{
+  "name": "softpage",
+  "version": "1.0.0",
+  "description": "Library for handling pages initialized with javascript and seo ready.",
+  "main": "softpage.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vkuzma/softpage.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vkuzma/softpage/issues"
+  },
+  "homepage": "https://github.com/vkuzma/softpage#readme",
+  "dependencies": {
+    "tingle.js": "^0.7.2"
+  }
+}
