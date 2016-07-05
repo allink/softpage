@@ -62,7 +62,7 @@ switch(process.env.npm_lifecycle_event) {
     case 'build':
         config = merge(common, {
             entry: {
-                app: PATHS.app,
+                softpage: PATHS.app,
             },
             output: {
                 filename: '[name].js'
