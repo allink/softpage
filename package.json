@@ -4,7 +4,9 @@
   "description": "Library for handling pages initialized with javascript and seo ready.",
   "main": "softpage.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "./node_modules/webpack/bin/webpack.js",
+    "dev": "./node_modules/webpack/bin/webpack.js -w",
+    "dev-server": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --content-base example/"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,24 @@
   },
   "homepage": "https://github.com/vkuzma/softpage#readme",
   "dependencies": {
+    "superagent": "^2.0.0",
     "tingle.js": "^0.7.2"
+  },
+  "devDependencies": {
+    "babel-loader": "^6.2.4",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.9.0",
+    "bootstrap": "^3.3.6",
+    "clean-webpack-plugin": "^0.1.9",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "progress-bar-webpack-plugin": "^1.8.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-merge": "^0.14.0",
+    "webpack-validator": "^2.2.0"
   }
 }
