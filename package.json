@@ -2,7 +2,7 @@
   "name": "softpage",
   "version": "1.0.0",
   "description": "Library for handling pages initialized with javascript and seo ready.",
-  "main": "softpage.js",
+  "main": "dist/softpage.js",
   "scripts": {
     "build": "./node_modules/webpack/bin/webpack.js",
     "dev": "./node_modules/webpack/bin/webpack.js -w",
