@@ -43,6 +43,11 @@ const common = {
             {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml'}
         ],
     },
+    resolve: {
+        root: [
+            __dirname
+        ]
+    },
     postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ],
     plugins: [
         new ExtractTextPlugin('[name].css'),
