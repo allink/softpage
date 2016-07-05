@@ -1,6 +1,6 @@
 import 'tingle.js/dist/tingle.css';
-import '../softpage.less';
-import SoftPage from '../softpage';
+import './example.less';
+import SoftPage from 'softpage';
 
 var soft_page = new SoftPage({
     onPageLoaded: function(soft_page) {
