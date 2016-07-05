@@ -6,6 +6,7 @@ const validate = require('webpack-validator');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 const PATHS = {
     app: './softpage',
@@ -30,10 +31,10 @@ const common = {
             }
             }, {
             	test: /\.less?$/,
-                loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader')
+                loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader!less-loader')
             }, {
             	test: /\.css?$/,
-            	loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+            	loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader')
             },
             {test: /\.(gif|png)$/, loader: 'url-loader?limit=100000' },
             {test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/font-woff'},
@@ -42,6 +43,7 @@ const common = {
             {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml'}
         ],
     },
+    postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ],
     plugins: [
         new ExtractTextPlugin('[name].css'),
         new ProgressBarPlugin(),

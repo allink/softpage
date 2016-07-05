@@ -1,8 +1,7 @@
-@import "~bootstrap/less/mixins.less";
 @import "~bootstrap/less/variables.less";
 
 .tingle-modal-box {
-    .transition(none);
+    transition: none;
     border-radius: 0;
 
     @media (max-width: @screen-sm-max) {
@@ -23,8 +22,8 @@
         top: 0 !important;
         min-height: 100%;
         opacity: 0;
-        .translate(15%, 0);
-        .transition-transform(~'.8s, opacity 0.6s .1s');
+        transform: translate(15%, 0);
+        transition: transform .8s, opacity 0.6s .1s;
 
         @media (min-width: @screen-sm-min) and (max-width: 1700px) {
             .max-width {
@@ -37,7 +36,7 @@
         padding: 0;
         &.animate {
             will-change: opacity;
-            .transition(opacity .6s);
+            transition: opacity .6s;
         }
     }
 
@@ -55,13 +54,13 @@
 
         @media (min-width: @screen-sm-min) {
             left: -10px; top: 10px;
-            .translate(-100%, 0);
+            transform: translate(-100%, 0);
         }
     }
 
     &.tingle-modal--visible {
         .tingle-modal-box {
-            .translate(0, 0);
+            transform: translate(0, 0);
             opacity: 1;
         }
     }
