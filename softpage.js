@@ -43,10 +43,6 @@ class SoftPage {
                 this.modal.close();
             }
         };
-
-        // append close button in tingle modal box
-        this.modal.modal.querySelector('.tingle-modal-box').
-            appendChild(this.modal.modal.querySelector('.tingle-modal__close'));
     }
 
     loadPage(href, pushstate) {
