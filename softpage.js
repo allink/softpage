@@ -52,7 +52,6 @@ class SoftPage {
             .end((error, result) => {
                 var modal_content = this.modal.modal.querySelector('.tingle-modal-box__content');
                 modal_content.classList.remove('animate');
-                modal_content.style.opacity = 0;
 
                 this.modal.open();
                 this.modal.setContent(result.text);
@@ -60,10 +59,6 @@ class SoftPage {
                 if(this.options.onPageLoaded) {
                     this.options.onPageLoaded(this);
                 }
-
-                // animate content
-                modal_content.classList.add('animate');
-                modal_content.style.opacity = 1;
 
                 if(pushstate) {
                     history.pushState({is_soft_page: true}, '', href);

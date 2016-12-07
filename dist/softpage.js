@@ -128,7 +128,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	            _superagent2.default.get(href).set('X-Requested-With', 'XMLHttpRequest').end(function (error, result) {
 	                var modal_content = _this.modal.modal.querySelector('.tingle-modal-box__content');
 	                modal_content.classList.remove('animate');
-	                modal_content.style.opacity = 0;
 
 	                _this.modal.open();
 	                _this.modal.setContent(result.text);
@@ -136,10 +135,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	                if (_this.options.onPageLoaded) {
 	                    _this.options.onPageLoaded(_this);
 	                }
-
-	                // animate content
-	                modal_content.classList.add('animate');
-	                modal_content.style.opacity = 1;
 
 	                if (pushstate) {
 	                    history.pushState({ is_soft_page: true }, '', href);
