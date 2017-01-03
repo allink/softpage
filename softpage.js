@@ -5,7 +5,6 @@ class SoftPage {
     constructor (options) {
         this.options = options || {};
         this.base_url = window.location.href;
-
         this.init();
     }
 
@@ -13,7 +12,7 @@ class SoftPage {
         let base_url = this.base_url;
 
         this.modal = new tingle.modal({
-            cssClass: ['side-page'],
+            cssClass: ['softpage'],
             onClose: function() {
                 history.pushState({}, '', base_url);
             }
