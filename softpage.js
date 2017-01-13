@@ -10,13 +10,13 @@ class SoftPage {
 
     init () {
         let base_url = this.base_url;
-
+        var self = this;
         this.modal = new tingle.modal({
             cssClass: ['softpage'],
             onClose: function() {
                 history.pushState({}, '', base_url);
-                if(this.options.onSoftpageClosed) {
-                    this.options.onSoftpageClosed(this);
+                if(self.options.onSoftpageClosed) {
+                    self.options.onSoftpageClosed(self);
                 }
             }
         });

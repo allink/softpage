@@ -87,13 +87,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	        key: 'init',
 	        value: function init() {
 	            var base_url = this.base_url;
-
+	            var self = this;
 	            this.modal = new _tingle2.default.modal({
 	                cssClass: ['softpage'],
 	                onClose: function onClose() {
 	                    history.pushState({}, '', base_url);
-	                    if (this.options.onSoftpageClosed) {
-	                        this.options.onSoftpageClosed(this);
+	                    if (self.options.onSoftpageClosed) {
+	                        self.options.onSoftpageClosed(self);
 	                    }
 	                }
 	            });
