@@ -92,6 +92,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	                cssClass: ['softpage'],
 	                onClose: function onClose() {
 	                    history.pushState({}, '', base_url);
+	                    if (this.options.onSoftpageClosed) {
+	                        this.options.onSoftpageClosed(this);
+	                    }
 	                }
 	            });
 
