@@ -15,6 +15,9 @@ class SoftPage {
             cssClass: ['softpage'],
             onClose: function() {
                 history.pushState({}, '', base_url);
+                if(this.options.onSoftpageClosed) {
+                    this.options.onSoftpageClosed(this);
+                }
             }
         });
 
