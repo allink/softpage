@@ -32,9 +32,12 @@ class SoftPage {
                 isEscape = evt.keyCode == 27;
             }
             if (isEscape) {
-                // only close if the softpage modal is opened
+                // only close if the "softpage modal" is opened
                 if (modal_instance.modal.classList.contains('tingle-modal--visible')) {
-                    modal_instance.close();
+                    // only close if the "form modal" is NOT opened
+                    if (document.querySelector('html').classList.contains('form-modal-visible') === false) {
+                        modal_instance.close();
+                    }
                 }
             }
         };
