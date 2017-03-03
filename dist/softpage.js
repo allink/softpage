@@ -109,7 +109,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	                    isEscape = evt.keyCode == 27;
 	                }
 	                if (isEscape) {
-	                    modal_instance.close();
+	                    // only close if the softpage modal is opened
+	                    if (modal_instance.modal.classList.contains('tingle-modal--visible')) {
+	                        modal_instance.close();
+	                    }
 	                }
 	            };
 
