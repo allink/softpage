@@ -130,24 +130,30 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	    }, {
 	        key: 'loadPage',
-	        value: function loadPage(href, pushstate) {
+	        value: function loadPage(href, pushstate, softpage_content_id) {
 	            var _this = this;
 
-	            _superagent2.default.get(href).set('X-Requested-With', 'XMLHttpRequest').end(function (error, result) {
-	                var modal_content = _this.modal.modal.querySelector('.tingle-modal-box__content');
-	                modal_content.classList.remove('animate');
-
-	                _this.modal.open();
-	                _this.modal.setContent(result.text);
-
-	                if (_this.options.onPageLoaded) {
-	                    _this.options.onPageLoaded(_this);
+	            // init
+	            var modal_content = this.modal.modal.querySelector('.tingle-modal-box__content');
+	            // option 1: load content of element with ID
+	            if (softpage_content_id && softpage_content_id.length > 0) {
+	                var softpage_content_markup = document.getElementById(softpage_content_id).innerHTML;
+	                this.modal.open();
+	                this.modal.setContent(softpage_content_markup);
+	            }
+	            // otherwise, do it the regular way
+	            else {
+	                    _superagent2.default.get(href).set('X-Requested-With', 'XMLHttpRequest').end(function (error, result) {
+	                        _this.modal.open();
+	                        _this.modal.setContent(result.text);
+	                        if (_this.options.onPageLoaded) {
+	                            _this.options.onPageLoaded(_this);
+	                        }
+	                        if (pushstate) {
+	                            history.pushState({ is_soft_page: true }, '', href);
+	                        }
+	                    });
 	                }
-
-	                if (pushstate) {
-	                    history.pushState({ is_soft_page: true }, '', href);
-	                }
-	            });
 	        }
 	    }]);
 
