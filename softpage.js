@@ -53,12 +53,16 @@ class SoftPage {
         };
     }
 
+    closeSoftpage() {
+        this.modal.close();
+    }
+
     loadPage(href, pushstate, softpage_content_id) {
         // init
         var modal_content = this.modal.modal.querySelector('.tingle-modal-box__content');
         // option 1: load content of element with ID
         if (softpage_content_id && softpage_content_id.length > 0) {
-            var softpage_content_markup = document.getElementById(softpage_content_id).innerHTML
+            var softpage_content_markup = document.getElementById(softpage_content_id).innerHTML;
             this.modal.open();
             this.modal.setContent(softpage_content_markup);
         }

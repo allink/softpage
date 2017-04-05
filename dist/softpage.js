@@ -129,6 +129,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	            };
 	        }
 	    }, {
+	        key: 'closeSoftpage',
+	        value: function closeSoftpage() {
+	            this.modal.close();
+	        }
+	    }, {
 	        key: 'loadPage',
 	        value: function loadPage(href, pushstate, softpage_content_id) {
 	            var _this = this;
