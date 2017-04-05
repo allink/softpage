@@ -145,6 +145,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	                var softpage_content_markup = document.getElementById(softpage_content_id).innerHTML;
 	                this.modal.open();
 	                this.modal.setContent(softpage_content_markup);
+	                if (this.options.onPageLoaded) {
+	                    this.options.onPageLoaded(this);
+	                }
 	            }
 	            // otherwise, do it the regular way
 	            else {
