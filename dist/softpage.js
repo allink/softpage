@@ -98,7 +98,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                },
 	                beforeClose: function beforeClose() {
 	                    if (self.options.onBeforeClose) {
-	                        self.options.onBeforeClose(self);
+	                        return self.options.onBeforeClose(self);
 	                    }
 	                }
 	            });

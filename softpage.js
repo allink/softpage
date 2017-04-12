@@ -21,7 +21,7 @@ class SoftPage {
             },
             beforeClose: function() {
                 if(self.options.onBeforeClose) {
-                    self.options.onBeforeClose(self);
+                    return self.options.onBeforeClose(self);
                 }
             }
         });
