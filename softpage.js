@@ -21,27 +21,6 @@ class SoftPage {
             }
         });
 
-        // add functionality to close the modal with the ESCAPE key
-        var modal_instance = this.modal;
-        document.onkeydown = function(evt) {
-            evt = evt || window.event;
-            var isEscape = false;
-            if ("key" in evt) {
-                isEscape = evt.key == "Escape";
-            } else {
-                isEscape = evt.keyCode == 27;
-            }
-            if (isEscape) {
-                // only close if the "softpage modal" is opened
-                if (modal_instance.modal.classList.contains('tingle-modal--visible')) {
-                    // only close if the "form modal" is NOT opened
-                    if (document.querySelector('html').classList.contains('form-modal-visible') === false) {
-                        modal_instance.close();
-                    }
-                }
-            }
-        };
-
         // in case of browser history is changing
         window.onpopstate = function(event) {
             if(event.state && event.state.is_soft_page) {
