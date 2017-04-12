@@ -95,6 +95,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	                    if (self.options.onSoftpageClosed) {
 	                        self.options.onSoftpageClosed(self);
 	                    }
+	                },
+	                beforeClose: function beforeClose() {
+	                    if (self.options.onBeforeClose) {
+	                        self.options.onBeforeClose(self);
+	                    }
 	                }
 	            });
 

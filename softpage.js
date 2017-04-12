@@ -18,6 +18,11 @@ class SoftPage {
                 if(self.options.onSoftpageClosed) {
                     self.options.onSoftpageClosed(self);
                 }
+            },
+            beforeClose: function() {
+                if(self.options.onBeforeClose) {
+                    self.options.onBeforeClose(self);
+                }
             }
         });
 
