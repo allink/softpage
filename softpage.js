@@ -50,6 +50,10 @@ class SoftPage {
             this.modal.open();
             this.modal.setContent(softpage_content_markup);
             this.modal.modal.scrollTop = 0;
+            // let us know that everything's alright
+            if(this.options.onPageLoaded) {
+                this.options.onPageLoaded(this);
+            }
         }
         // otherwise, do it the regular way
         else {

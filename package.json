@@ -1,6 +1,6 @@
 {
   "name": "softpage",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "description": "Library for handling pages initialized with javascript and seo ready.",
   "main": "dist/softpage.js",
   "scripts": {
