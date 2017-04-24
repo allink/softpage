@@ -129,7 +129,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                var softpage_content_markup = document.getElementById(softpage_content_id).innerHTML;
 	                this.modal.open();
 	                this.modal.setContent(softpage_content_markup);
-	                this.modal.modal.scrollTop = 0;
+	                this.modal.modal.querySelector('.tingle-modal-box').scrollTop = 0;
 	                // let us know that everything's alright
 	                if (this.options.onPageLoaded) {
 	                    this.options.onPageLoaded(this);
