@@ -34,7 +34,7 @@ class SoftPage {
             else if(this.modal) {
                 this.modal.close();
             }
-        };
+        }.bind(this);
     }
 
     closeSoftpage() {
