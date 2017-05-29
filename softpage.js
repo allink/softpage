@@ -27,11 +27,13 @@ class SoftPage {
         });
 
         // in case of browser history is changing
-        window.onpopstate = function(event) {
-            if(event.state && event.state.is_soft_page) {
-                this.loadPage(window.location);
+        window.onpopstate = function (event) {
+            if (window.location.href !== base_url) { // when changing to another page
+                window.location.reload(); // after history change, reload to load server-side page
             }
-            else if(this.modal) {
+            if (event.state && event.state.is_soft_page) {
+                this.loadPage(window.location);
+            } else if (this.modal) {
                 this.modal.close();
             }
         }.bind(this);
