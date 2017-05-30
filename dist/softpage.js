@@ -105,7 +105,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	            // in case of browser history is changing
 	            window.onpopstate = function (event) {
-	                if (window.location.href !== base_url) {
+	                if (window.location.href !== base_url && event.state !== null) {
 	                    // when changing to another page
 	                    window.location.reload(); // after history change, reload to load server-side page
 	                }
