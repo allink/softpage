@@ -52,7 +52,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -91,7 +91,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            this.modal = new _tingle2.default.modal({
 	                cssClass: ['softpage'],
 	                onClose: function onClose() {
-	                    history.pushState({}, '', base_url);
+	                    // history.pushState({}, '', base_url); // removed due to double base url issue
 	                    if (self.options.onSoftpageClosed) {
 	                        self.options.onSoftpageClosed(self);
 	                    }
@@ -161,19 +161,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = SoftPage;
 	module.exports = exports['default'];
 
-/***/ }),
+/***/ },
 /* 1 */
-/***/ (function(module, exports) {
+/***/ function(module, exports) {
 
 	module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
 
-/***/ }),
+/***/ },
 /* 2 */
-/***/ (function(module, exports) {
+/***/ function(module, exports) {
 
 	module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
 
-/***/ })
+/***/ }
 /******/ ])
 });
 ;
