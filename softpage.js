@@ -14,7 +14,7 @@ class SoftPage {
         this.modal = new tingle.modal({
             cssClass: ['softpage'],
             onClose: function() {
-                // history.pushState({}, '', base_url); // removed due to double base url issue
+                history.replaceState({}, '', base_url); // removed due to double base url issue
                 if(self.options.onSoftpageClosed) {
                     self.options.onSoftpageClosed(self);
                 }
@@ -69,7 +69,7 @@ class SoftPage {
                         this.options.onPageLoaded(this);
                     }
                     if(pushstate) {
-                        history.pushState({is_soft_page: true}, '', href);
+                        history.replaceState({is_soft_page: true}, '', href);
                     }
             });
         }
