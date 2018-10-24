@@ -52,7 +52,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -105,7 +105,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	            // in case of browser history is changing
 	            window.onpopstate = function (event) {
-	                if (window.location.href !== base_url && event.state !== null) {
+	                if (window.location.href !== base_url) {
 	                    // when changing to another page
 	                    window.location.reload(); // after history change, reload to load server-side page
 	                }
@@ -148,7 +148,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                            _this.options.onPageLoaded(_this);
 	                        }
 	                        if (pushstate) {
-	                            history.replaceState({ is_soft_page: true }, '', href);
+	                            history.pushState({ is_soft_page: true }, '', href);
 	                        }
 	                    });
 	                }
@@ -161,19 +161,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = SoftPage;
 	module.exports = exports['default'];
 
-/***/ },
+/***/ }),
 /* 1 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
 
-/***/ },
+/***/ }),
 /* 2 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
 
-/***/ }
+/***/ })
 /******/ ])
 });
 ;
