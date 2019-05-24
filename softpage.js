@@ -59,8 +59,11 @@ class SoftPage {
         }
         // otherwise, do it the regular way
         else {
+            // Append softpage=True to the request URL in case the responding page behaves differently for softpages.
+            let sofpageIdentificationUrlParameter = href.indexOf('?') === -1 ? '?softpage=true' : '&softpage=true';
+            let softpageUrl = href + sofpageIdentificationUrlParameter;
             request
-                .get(href)
+                .get(softpageUrl)
                 .set('X-Requested-With', 'XMLHttpRequest')
                 .end((error, result) => {
                     this.modal.open();
