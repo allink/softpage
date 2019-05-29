@@ -141,7 +141,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	            }
 	            // otherwise, do it the regular way
 	            else {
-	                    _superagent2.default.get(href).set('X-Requested-With', 'XMLHttpRequest').end(function (error, result) {
+	                    // Append softpage=True to the request URL in case the responding page behaves differently for softpages.
+	                    var sofpageIdentificationUrlParameter = href.indexOf('?') === -1 ? '?softpage=true' : '&softpage=true';
+	                    var softpageUrl = href + sofpageIdentificationUrlParameter;
+	                    _superagent2.default.get(softpageUrl).set('X-Requested-With', 'XMLHttpRequest').end(function (error, result) {
 	                        _this.modal.open();
 	                        _this.modal.setContent(result.text);
 	                        if (_this.options.onPageLoaded) {
